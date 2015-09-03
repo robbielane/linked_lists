@@ -1,7 +1,7 @@
 # gem 'minitest', '~> 5.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'linked_lists'
+require_relative '../lib/linked_lists'
 
 class LinkedListsTest < Minitest::Test
   def test_if_empty_head_returns_nil

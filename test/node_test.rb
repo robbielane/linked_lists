@@ -1,7 +1,7 @@
 # gem 'minitest', '~> 5.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'linked_lists'
+require_relative '../lib/linked_lists'
 
 class NodeTest < Minitest::Test
   def test_if_node_stores_data
