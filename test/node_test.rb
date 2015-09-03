@@ -1,16 +1,14 @@
 # gem 'minitest', '~> 5.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/linked_lists'
+require_relative '../lib/linked_list'
 
 class NodeTest < Minitest::Test
-  def test_if_node_stores_data
-    node = Node.new("apple")
-
-    assert_equal 'apple', node.data
+  def test_node_stores_data
+    assert_equal 'apple', Node.new("apple").data
   end
 
-  def test_if_node_stores_link
+  def test_node_stores_link
     node1 = Node.new("apple")
     node2 = Node.new('orange')
     node1.link = node2
