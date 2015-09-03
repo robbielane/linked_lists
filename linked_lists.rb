@@ -169,4 +169,14 @@ class LinkedList
     cursor.link.link = temp_node
   end
 
+  def distance(node1, node2)
+    counter = 0
+    while node1.link != node2 do
+      node1 = node1.link
+      counter += 1
+    end
+    counter + 1
+  end
+
+
 end

@@ -363,4 +363,23 @@ class LinkedListsTest < Minitest::Test
 
       assert_equal nil, result
     end
+
+    def test_distance_with_6_nodes
+      list = LinkedList.new
+      node1 = Node.new('value1')
+      node2 = Node.new('value2')
+      node3 = Node.new('value3')
+      node4 = Node.new('value4')
+      node5 = Node.new('value5')
+      node6 = Node.new('value6')
+      list.appened(node1)
+      list.appened(node2)
+      list.appened(node3)
+      list.appened(node4)
+      list.appened(node5)
+      list.appened(node6)
+      distance_between = list.distance(node2, node5)
+
+      assert_equal 3, distance_between
+    end
 end
