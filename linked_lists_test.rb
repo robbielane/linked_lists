@@ -96,6 +96,19 @@ class LinkedListsTest < Minitest::Test
     refute included
   end
 
+  def test_include_returns_false_when_value_does_not_exist
+    list = LinkedList.new
+    node1 = Node.new('value1')
+    node2 = Node.new('value2')
+    node3 = Node.new('value3')
+    list.appened(node1)
+    list.appened(node2)
+    list.appened(node3)
+    included = list.include?('value6')
+
+    refute included
+  end
+
   def test_count_with_3_nodes
     list = LinkedList.new
     node1 = Node.new('value1')

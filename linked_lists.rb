@@ -26,7 +26,8 @@ class LinkedList
     end
   end
 
-  def end_node(cursor=@head)
+  def end_node
+    cursor=@head
     if cursor.link == nil
       cursor
     elsif cursor.link
@@ -35,7 +36,8 @@ class LinkedList
     end
   end
 
-  def include?(value, cursor=@head)
+  def include?(value)
+    cursor=@head
     if cursor == nil
       false
     else
@@ -46,22 +48,24 @@ class LinkedList
     end
   end
 
-  def count(cursor=@head)
+  def count
+    cursor=@head
     counter = 0
     if cursor == nil
       counter
     else
       counter = 1
       while cursor.link != nil
-        counter += 1
         cursor = cursor.link
+        counter += 1
         break if cursor.link == nil
       end
     end
     counter
   end
 
-  def pop(cursor=@head)
+  def pop
+    cursor=@head
     popped = nil
     if cursor == nil
       nil
@@ -84,7 +88,8 @@ class LinkedList
    cursor.data
   end
 
-  def find_by_index?(index_position, cursor=@head)
+  def find_by_index?(index_position)
+    cursor=@head
     counter = 0
     return nil if index_position > count-1
     if cursor == nil
@@ -100,7 +105,8 @@ class LinkedList
     end
   end
 
-  def find_by_value?(cursor=@head, value)
+  def find_by_value?(value)
+    cursor=@head
     counter = 0
     if cursor == nil
       nil
@@ -111,21 +117,16 @@ class LinkedList
         cursor = cursor.link
         counter += 1
       end
-
       counter
     end
   end
 
-  def remove_by_index(index_position, cursor=@head)
+  def remove_by_index(index_position)
+    cursor=@head
     counter = 0
-    temp_node = nil
     return nil if index_position > (count - 1)
     if cursor == nil
       nil
-    elsif counter == index_position
-      temp_node = cursor
-      @head = cursor.link
-      temp_node
     else
       counter += 1
       until counter == index_position do
@@ -138,7 +139,8 @@ class LinkedList
     end
   end
 
-  def remove_by_value(value, cursor=@head)
+  def remove_by_value(value)
+    cursor=@head
     counter = 0
     if cursor.data == value
       temp_node = cursor
